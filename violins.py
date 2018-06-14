@@ -38,7 +38,7 @@ def violin(y=None, split=None, data=None, **kwargs):
     ax2.set_xlim([t_min, t_max])
     ax2.set_ylim([0, 1.1 * np.max(t_pdf)])
 
-    x_sig = np.linspace(t_dist.ppf(0.05, df), t_dist.ppf(0.95, df), 100)
+    x_sig = np.linspace(t_dist.ppf(0.025, df), t_dist.ppf(0.975, df), 100)
     t_sig = t_dist.pdf(x_sig, df)
     ax2.fill_between(x_sig, t_sig, facecolor="0.75", alpha=0.4)
 
